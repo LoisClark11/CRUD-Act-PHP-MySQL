@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #f8f9fa; 
+    padding: 50px; 
+}
+.container { 
+    max-width: 900px; 
+    margin: 50px auto; 
+    background: white; 
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+}
+h2 { 
+    color: #2c3e50; 
+    margin-bottom: 20px; 
+}
+
+/* Table Styles */
+table { 
+    width: 100%; 
+    border-collapse: separate; /* Change from collapse to separate */
+    border-spacing: 0;         /* Keeps cells touching like collapse did */
+    margin-top: 20px;
+    border: 1px solid #eee;    /* Add a light border around the whole table */
+    border-radius: 8px;        /* Round the table corners */
+    overflow: hidden;          /* Keep the gradient inside the rounding */
+}
+th { 
+    background: transparent; /* Remove the old gradient from here */
+    color: white; 
+    padding: 15px 12px; 
+    text-align: left; 
+    font-weight: 600;
+}
+thead {
+    background: #8428bd;
+    background: linear-gradient(325deg, rgba(132, 40, 189, 1) 0%, rgba(139, 33, 166, 1) 22%, rgba(92, 47, 237, 1) 100%);
+}
+td { 
+    padding: 12px; 
+    border-bottom: 1px solid #eee; 
+}
+tr:last-child td {
+    border-bottom: none;
+}
+tr:nth-child(even) { 
+    background-color: #fcfcfc; 
+}
+
+/* Buttons */
+.btn { 
+    padding: 0 15px;
+    border-radius: 4px; 
+    text-decoration: none; 
+    border: none; 
+    cursor: pointer; 
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    vertical-align: middle;
+}
+.btn-add { 
+    background: #8428bd;
+    background: linear-gradient(325deg, rgba(132, 40, 189, 1) 0%, rgba(139, 33, 166, 1) 22%, rgba(92, 47, 237, 1) 100%);
+    color: white; 
+    margin-bottom: 15px; 
+}
+.btn-save { 
+    background: #8428bd;
+    background: linear-gradient(325deg, rgba(132, 40, 189, 1) 0%, rgba(139, 33, 166, 1) 22%, rgba(92, 47, 237, 1) 100%);
+    color: white; 
+    width: 48%; 
+}
+.btn-cancel { 
+    background-color: #95a5a6; 
+    color: white; 
+    width: 48%; 
+    float: right; 
+    text-align: center;
+    float: right;
+}
+
+/* Forms */
+.form-group { 
+    margin-bottom: 15px; 
+}
+form::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+label { 
+    display: block; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+}
+input { 
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+/* Actions */
+.edit-link { 
+    color: #7d5bbe; 
+    text-decoration: none; 
+    margin-right: 10px; 
+}
+.delete-link { 
+    color: #ff4d4d; 
+    text-decoration: none; 
+}
