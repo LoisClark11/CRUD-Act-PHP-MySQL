@@ -1,21 +1,17 @@
 <?php
 require 'db.php';
 
-// 1. Get and validate the ID immediately
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-// 2. Fetch the current book data
 $stmt = $pdo->prepare("SELECT * FROM books WHERE id = ?");
 $stmt->execute([$id]);
 $book = $stmt->fetch();
 
-// 3. If book doesn't exist, send them back to the list
 if (!$book) {
     header("Location: index.php");
     exit;
 }
 
-// 4. Handle the Update request
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $sql = "UPDATE books SET title=?, author=?, year_published=? WHERE id=?";
     $stmt = $pdo->prepare($sql);

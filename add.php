@@ -2,7 +2,6 @@
 require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Using prepared statements with positional placeholders (?) for security
     $sql = "INSERT INTO books (title, author, year_published) VALUES (?, ?, ?)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([

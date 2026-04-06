@@ -1,18 +1,14 @@
 <?php 
 require 'db.php'; 
 
-// 1. Sorting Logic
 $sort = $_GET['sort'] ?? 'id';
 $order = $_GET['order'] ?? 'ASC';
 
-// Whitelist columns for security
 $allowed_columns = ['id', 'title', 'author', 'year_published'];
 if (!in_array($sort, $allowed_columns)) { $sort = 'id'; }
 
-// Toggle order for next click
 $next_order = ($order === 'ASC') ? 'DESC' : 'ASC';
 
-// 2. Fetch data
 $stmt = $pdo->query("SELECT * FROM books ORDER BY $sort $order");
 $books = $stmt->fetchAll();
 ?>
@@ -75,7 +71,6 @@ $books = $stmt->fetchAll();
     searchBar.addEventListener('input', function() {
         const query = this.value;
 
-        // Using Fetch API instead of XMLHttpRequest for cleaner code
         fetch('search.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
